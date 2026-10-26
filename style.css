@@ -1,0 +1,37 @@
+:root {
+  --bg: #12141c;
+  --panel: #1b1e2a;
+  --ink: #e8e9f0;
+  --dim: #8b90a5;
+  --accent: #ffb347;
+  --accent2: #6ee7b7;
+  --line: #2a2e3e;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--ink); padding: 20px; }
+header h1 { color: var(--accent); letter-spacing: 1px; }
+.subtitle { color: var(--dim); margin: 6px 0 18px; }
+main { display: grid; grid-template-columns: 340px 1fr 320px; gap: 16px; align-items: start; }
+@media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.panel h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 10px; }
+textarea, canvas { width: 100%; }
+textarea { background: #0e1017; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 10px; font-family: ui-monospace, monospace; resize: vertical; }
+.controls { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; align-items: center; }
+button { background: var(--accent); color: #141210; border: none; border-radius: 6px; padding: 8px 14px; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: 0.35; cursor: default; }
+button.secondary { background: #2f3448; color: var(--ink); }
+.speed-label { color: var(--dim); font-size: 0.8rem; display: flex; align-items: center; gap: 6px; }
+.stats { margin-top: 12px; font-size: 0.85rem; color: var(--dim); line-height: 1.7; }
+.stats b { color: var(--accent2); }
+#tree-canvas { background: #0e1017; border-radius: 6px; height: 480px; }
+.step-log { font-family: ui-monospace, monospace; font-size: 0.75rem; color: var(--dim); max-height: 140px; overflow-y: auto; margin-top: 8px; }
+.step-log .latest { color: var(--accent2); }
+.code-table { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-family: ui-monospace, monospace; font-size: 0.8rem; }
+.code-table .sym { color: var(--accent); }
+.code-table .bits { color: var(--accent2); word-break: break-all; }
+.encoded { font-family: ui-monospace, monospace; font-size: 0.7rem; color: var(--accent2); word-break: break-all; max-height: 160px; overflow-y: auto; background: #0e1017; padding: 8px; border-radius: 6px; margin-bottom: 8px; }
+#compression { font-size: 0.85rem; color: var(--dim); line-height: 1.6; }
+#compression b { color: var(--accent); }
+footer { color: var(--dim); font-size: 0.75rem; margin-top: 18px; text-align: center; }

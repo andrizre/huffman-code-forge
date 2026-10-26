@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huffman Code Forge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⛏ Huffman Code Forge</h1>
+  <p class="subtitle">Watch a Huffman tree grow from your text — build the optimal prefix code, step by step.</p>
+</header>
+
+<main>
+  <section class="panel input-panel">
+    <h2>Input</h2>
+    <textarea id="text-input" rows="5" spellcheck="false">ABRACADABRA Abracadabra abracadabra!</textarea>
+    <div class="controls">
+      <button id="btn-build">Build Tree</button>
+      <button id="btn-step" disabled>Step ▸</button>
+      <button id="btn-play" disabled>▶ Auto</button>
+      <button id="btn-reset" disabled>Reset</button>
+      <label class="speed-label">speed
+        <input type="range" id="speed" min="1" max="20" value="6">
+      </label>
+    </div>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="panel viz-panel">
+    <h2>Tree</h2>
+    <canvas id="tree-canvas"></canvas>
+    <div id="step-log" class="step-log"></div>
+  </section>
+
+  <section class="panel code-panel">
+    <h2>Code Table</h2>
+    <div id="code-table"></div>
+    <h2>Encoded Bits</h2>
+    <div id="encoded" class="encoded"></div>
+    <div id="compression"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Single-frequency merging with a stable priority queue · leaves are characters, internal nodes are sums · 0 = left, 1 = right</p>
+</footer>
+
+<script src="huffman.js"></script>
+<script src="renderer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
